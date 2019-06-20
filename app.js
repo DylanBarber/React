@@ -7,32 +7,37 @@ function Header(props){
         </header>
     );
 };
-function Player(){
+function Player(props){
     return (
         <div className="player">
-            <span className="player-name">
-                Dylan
-            </span>
-            <Counter />
+            <span className="player-name">{props.playerName}</span>
+            <Counter score = {props.score}/>
         </div>
 
     );
 };
-function Counter(){
+function Counter(props){
     return (
         <div className="counter">
             <button className="counter-add">-</button>
-            <span className="counter-score">1</span>
+            <span className="counter-score">{props.score}</span>
             <button className="counter-subtract">+</button>
         </div>
     );
 };
-function App(){
+function App(platerName, score){
     return(
         <div className="scoreboard">
             <Header title="Scoreboard" totalPlayers={2}/>
             {/* Player List */}
-            <Player />
+            <Player 
+            playerName = "Dylan"
+            score = {0}
+            />
+            <Player
+            playerName = "Tom"
+            score = {2}
+            />
         </div>
     );
 };
