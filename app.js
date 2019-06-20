@@ -38,7 +38,7 @@ function Counter(props){
 function App(props){
     return(
         <div className="scoreboard">
-            <Header title="Scoreboard" totalPlayers={2}/>
+            <Header title="Scoreboard" totalPlayers={props.initialPlayers.length}/>
             {/* Player List */}
             {props.initialPlayers.map( player => 
                 <Player 
