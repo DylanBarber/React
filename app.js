@@ -1,8 +1,8 @@
-function Header(){
+function Header(props){
     return (
         <header>
-            <h1>Scoreboard</h1>
-            <span className="stats">Players: 1</span>
+            <h1>{props.title}</h1>
+            <span className="stats">Players: {props.totalPlayers}</span>
             
         </header>
     );
@@ -22,7 +22,7 @@ function Counter(){
     return (
         <div className="counter">
             <button className="counter-add">-</button>
-            <span className="counter-score">35</span>
+            <span className="counter-score">1</span>
             <button className="counter-subtract">+</button>
         </div>
     );
@@ -30,7 +30,7 @@ function Counter(){
 function App(){
     return(
         <div className="scoreboard">
-            <Header />
+            <Header title="Scoreboard" totalPlayers={2}/>
             {/* Player List */}
             <Player />
         </div>
